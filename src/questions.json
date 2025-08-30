@@ -1,0 +1,783 @@
+[
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "NASA rover discovers signs of ancient riverbeds on Mars.",
+      "Doctors recommend eating Tide Pods for better digestion.",
+      "World Health Organization launches new mental health campaign.",
+      "Apple introduces a foldable iPhone."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. No medical professional recommends eating Tide Pods. It was a dangerous meme from 2018 that led to serious health warnings."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Google releases AI tool to help with coding.",
+      "Elon Musk announces Mars colony opening in 2024.",
+      "UN plans global tree-planting initiative.",
+      "Scientists discover microplastics in human blood."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. There are no Mars colonies opening in 2024. Space travel and colonization timelines are much longer and more complex."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New study shows benefits of Mediterranean diet.",
+      "5G networks cause COVID-19 virus mutations.",
+      "Climate change linked to extreme weather events.",
+      "Researchers develop new cancer detection method."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. 5G networks use radio waves that cannot interact with or mutate viruses. This was a widely debunked conspiracy theory."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "COVID-19 vaccines undergo rigorous safety testing.",
+      "Bill Gates implants microchips through vaccines.",
+      "Face masks help reduce virus transmission.",
+      "Social distancing slows disease spread."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Vaccines cannot contain microchips. This conspiracy theory has been repeatedly debunked by medical experts and fact-checkers."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Scientists discover new species in Amazon rainforest.",
+      "Flat Earth Society proves Earth is actually flat.",
+      "Ocean temperatures continue to rise globally.",
+      "Renewable energy costs continue to decrease."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. The Earth is scientifically proven to be spherical. The Flat Earth Society promotes pseudoscience that contradicts centuries of evidence."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New smartphone features improved battery life.",
+      "Moon landing was filmed in Hollywood studio.",
+      "Electric vehicles reduce carbon emissions.",
+      "Artificial intelligence improves medical diagnosis."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. The moon landing was real and well-documented. This conspiracy theory has been thoroughly debunked with extensive evidence."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Exercise improves mental health and mood.",
+      "Chemtrails are government mind control chemicals.",
+      "Regular sleep improves cognitive function.",
+      "Drinking water is essential for health."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Chemtrails are simply condensation trails from aircraft engines. The conspiracy theory about government chemicals has no scientific basis."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Global temperatures continue to rise.",
+      "Dinosaurs still exist in remote jungles.",
+      "Renewable energy adoption increases worldwide.",
+      "Plastic pollution affects marine life."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Dinosaurs went extinct 65 million years ago. No credible evidence suggests they still exist anywhere on Earth."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New cancer treatment shows promising results.",
+      "Vaccines cause autism in children.",
+      "Regular exercise reduces heart disease risk.",
+      "Healthy diet improves immune system."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Multiple large-scale studies have proven that vaccines do not cause autism. This myth originated from a fraudulent study that was retracted."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Solar power becomes more affordable.",
+      "Time travel machine invented by high school student.",
+      "Electric cars reduce air pollution.",
+      "Wind energy capacity grows globally."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Time travel machines do not exist and cannot be built with current technology. This violates known laws of physics."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New species discovered in deep ocean.",
+      "Lizard people control world governments.",
+      "Climate change affects weather patterns.",
+      "Biodiversity loss threatens ecosystems."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. The 'lizard people' conspiracy theory has no basis in reality. It's a fictional concept with no evidence supporting it."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Regular exercise improves brain function.",
+      "Mind reading technology now available to public.",
+      "Meditation reduces stress levels.",
+      "Sleep quality affects overall health."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. True mind reading technology does not exist. While brain-computer interfaces exist, they cannot read thoughts or memories."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New antibiotic discovered in soil bacteria.",
+      "Bigfoot captured on security camera.",
+      "Antibiotic resistance is growing concern.",
+      "Microbiome research advances medicine."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Bigfoot is a mythical creature with no scientific evidence of its existence. All supposed evidence has been debunked or proven hoaxes."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Renewable energy creates new jobs.",
+      "Aliens built the Egyptian pyramids.",
+      "Solar panels reduce electricity bills.",
+      "Wind turbines generate clean energy."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. The Egyptian pyramids were built by ancient Egyptians using advanced engineering techniques. There's no evidence of alien involvement."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New diabetes treatment approved by FDA.",
+      "Earth will be destroyed by asteroid in 2024.",
+      "Medical research improves patient outcomes.",
+      "Clinical trials test new medications."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. NASA and other space agencies track all known asteroids, and none pose a threat to Earth in 2024. This was a debunked prediction."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Electric vehicles reduce greenhouse gases.",
+      "Time crystals allow time manipulation.",
+      "Battery technology continues to improve.",
+      "Charging infrastructure expands globally."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. While time crystals exist as a quantum physics phenomenon, they cannot manipulate time as popularly imagined. They're stationary quantum systems."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Climate change affects global agriculture.",
+      "Secret society controls world events.",
+      "Droughts impact food production.",
+      "Extreme weather damages crops."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Secret societies controlling world events is a conspiracy theory with no credible evidence. World events are complex and involve many factors."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New smartphone improves camera quality.",
+      "Holographic technology replaces all screens.",
+      "Battery life extends device usage.",
+      "5G networks provide faster internet."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. While holographic technology exists, it cannot replace all screens. Current holographic displays are limited and expensive."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Regular exercise prevents chronic diseases.",
+      "Magic crystals cure all illnesses.",
+      "Healthy diet improves longevity.",
+      "Medical checkups detect problems early."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Magic crystals have no medical properties and cannot cure illnesses. This is pseudoscience with no scientific basis."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Ocean acidification affects marine life.",
+      "Mermaids discovered in Pacific Ocean.",
+      "Plastic pollution harms sea creatures.",
+      "Overfishing threatens fish populations."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Mermaids are mythical creatures that do not exist. All supposed mermaid discoveries have been hoaxes or misidentified animals."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New cancer screening method developed.",
+      "Invisible cloaking device now available.",
+      "Early detection saves lives.",
+      "Medical imaging technology advances."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. True invisible cloaking devices do not exist. While some limited cloaking research exists, it cannot make objects completely invisible."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Renewable energy reduces pollution.",
+      "Dragons found in remote mountain caves.",
+      "Solar power becomes more efficient.",
+      "Wind energy is cost-effective."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Dragons are mythical creatures that exist only in folklore and fiction. There's no evidence of real dragons anywhere on Earth."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New antibiotic fights resistant bacteria.",
+      "Teleportation device invented in garage.",
+      "Medical research saves lives.",
+      "Clinical trials test safety."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Teleportation devices do not exist and cannot be built with current technology. This violates fundamental laws of physics."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Climate change impacts global health.",
+      "Secret government weather control program.",
+      "Extreme weather affects communities.",
+      "Public health systems adapt to changes."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. While weather modification research exists (like cloud seeding), there's no secret government program controlling global weather patterns."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Electric cars reduce air pollution.",
+      "Perpetual motion machine invented.",
+      "Battery technology improves range.",
+      "Charging stations expand network."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Perpetual motion machines are impossible according to the laws of thermodynamics. They violate fundamental physics principles."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New species discovered in rainforest.",
+      "Unicorns found in Scottish Highlands.",
+      "Biodiversity research continues.",
+      "Conservation efforts protect wildlife."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Unicorns are mythical creatures that do not exist in reality. They exist only in folklore, mythology, and fiction."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Regular sleep improves memory.",
+      "Dream reading technology now available.",
+      "Sleep quality affects mood.",
+      "Rest helps brain function."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Technology cannot read or interpret dreams. While brain activity can be monitored during sleep, dreams themselves cannot be 'read' by machines."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New diabetes medication approved.",
+      "Secret cure for all diseases discovered.",
+      "Medical research advances treatment.",
+      "Clinical trials show positive results."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. There is no single cure for all diseases. Different diseases require different treatments, and medical science continues to develop new therapies."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Solar energy reduces carbon emissions.",
+      "Sun will explode in 2025.",
+      "Renewable power grows globally.",
+      "Clean energy creates jobs."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. The Sun will not explode in 2025. The Sun is a stable star that will continue for billions of years before eventually expanding into a red giant."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New cancer treatment shows promise.",
+      "Time travel tourism now available.",
+      "Medical research improves outcomes.",
+      "Clinical trials test effectiveness."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Time travel tourism does not exist and cannot exist with current technology. Time travel violates known laws of physics."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Climate change affects food security.",
+      "Secret society controls global economy.",
+      "Droughts impact crop yields.",
+      "Extreme weather damages agriculture."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. While some groups have economic influence, no secret society controls the global economy. Economic systems are complex and involve many factors."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Electric vehicles reduce emissions.",
+      "Flying cars available for purchase.",
+      "Battery technology improves.",
+      "Charging infrastructure expands."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. While flying car prototypes exist, they are not available for public purchase. Current technology is still in development and testing phases."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New antibiotic fights superbugs.",
+      "Magic potion cures aging.",
+      "Medical research saves lives.",
+      "Drug resistance is growing concern."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Magic potions that cure aging do not exist. Aging is a complex biological process that cannot be reversed by magical or fictional substances."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Ocean pollution affects marine life.",
+      "Atlantis discovered in Atlantic Ocean.",
+      "Plastic waste harms sea creatures.",
+      "Overfishing threatens ecosystems."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Atlantis is a mythical city from ancient Greek literature. While underwater ruins exist, none have been proven to be the legendary Atlantis."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Renewable energy creates jobs.",
+      "Invisible people walk among us.",
+      "Solar power reduces costs.",
+      "Wind energy grows capacity."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Invisible people do not exist. This is a fictional concept that has no basis in reality or science."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New smartphone improves security.",
+      "Mind control devices in smartphones.",
+      "Battery life extends usage.",
+      "Privacy features protect users."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Smartphones cannot control minds. While they can influence behavior through apps and notifications, they cannot directly control thoughts or actions."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Exercise improves heart health.",
+      "Secret exercise technique burns fat instantly.",
+      "Regular activity reduces disease risk.",
+      "Physical fitness improves longevity."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. No exercise technique can burn fat instantly. Fat loss requires consistent exercise and proper nutrition over time."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Climate change affects wildlife.",
+      "Animals can talk to humans secretly.",
+      "Habitat loss threatens species.",
+      "Conservation efforts continue."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Animals cannot talk to humans in secret or any other way. While animals communicate, they cannot speak human languages."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New medical device approved.",
+      "Telepathy helmets now on sale.",
+      "Medical technology advances.",
+      "Patient outcomes improve."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Telepathy helmets that can read minds do not exist. While brain-computer interfaces exist, they cannot enable telepathic communication."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Renewable energy reduces pollution.",
+      "Secret energy source discovered.",
+      "Solar power becomes cheaper.",
+      "Clean energy grows globally."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. While new energy sources are discovered, there's no secret energy source that can replace all current methods. Energy development is ongoing research."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New species discovered in ocean.",
+      "Sea monsters found in deep sea.",
+      "Marine research continues.",
+      "Ocean exploration reveals secrets."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Sea monsters do not exist. While deep sea creatures can look unusual, they are real animals, not mythical monsters."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Medical research improves treatment.",
+      "Secret cure hidden by government.",
+      "Clinical trials test new drugs.",
+      "Patient care advances."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Governments do not hide cures for diseases. Medical research is transparent and shared globally to help all patients."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Electric cars reduce emissions.",
+      "Anti-gravity cars now available.",
+      "Battery technology improves.",
+      "Charging stations expand."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Anti-gravity cars do not exist and cannot exist with current technology. They violate fundamental laws of physics."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New cancer treatment approved.",
+      "Magic wand cures all diseases.",
+      "Medical research saves lives.",
+      "Clinical trials show promise."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Magic wands that cure diseases do not exist. Medical treatments require scientific research and clinical testing."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Climate change affects agriculture.",
+      "Secret weather control machine.",
+      "Droughts impact crops.",
+      "Extreme weather damages farms."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. While weather modification research exists, there's no secret machine that can control global weather patterns."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Renewable energy creates jobs.",
+      "Invisible workers build everything.",
+      "Solar industry grows.",
+      "Clean energy employment increases."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Invisible workers do not exist. All construction and manufacturing is done by visible, real workers and machines."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New smartphone improves battery life.",
+      "Phone can predict the future.",
+      "Technology advances continue.",
+      "User experience improves."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Smartphones cannot predict the future. While they can analyze data and patterns, they cannot foresee future events."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Exercise improves mental health.",
+      "Secret exercise makes you immortal.",
+      "Physical activity reduces stress.",
+      "Fitness benefits overall health."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. No exercise can make you immortal. While exercise improves health and longevity, it cannot prevent death or aging."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New antibiotic fights resistance.",
+      "Secret society controls all medicine.",
+      "Medical research continues.",
+      "Patient care improves."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. No secret society controls all medicine. Medical research and development is conducted by many organizations globally."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Renewable energy reduces costs.",
+      "Free energy device invented.",
+      "Solar power becomes cheaper.",
+      "Clean energy saves money."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Free energy devices that violate the laws of thermodynamics do not exist. Energy always has costs associated with production and distribution."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New species discovered in forest.",
+      "Fairy creatures found in woods.",
+      "Biodiversity research continues.",
+      "Conservation protects wildlife."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Fairy creatures do not exist in reality. They are fictional beings from folklore and mythology."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Medical technology advances.",
+      "Secret healing chamber discovered.",
+      "Patient care improves.",
+      "Research saves lives."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Secret healing chambers that can cure all diseases do not exist. Medical treatment requires proven scientific methods."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Electric vehicles reduce pollution.",
+      "Flying motorcycles now available.",
+      "Battery technology improves.",
+      "Clean transportation grows."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Flying motorcycles are not available for public purchase. While prototypes exist, they are not commercially available."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New cancer screening method.",
+      "Secret cure hidden in jungle.",
+      "Medical research advances.",
+      "Early detection saves lives."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Secret cures hidden in jungles do not exist. Medical breakthroughs come from scientific research, not hidden locations."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Climate change affects oceans.",
+      "Secret underwater city discovered.",
+      "Ocean research continues.",
+      "Marine life threatened."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Secret underwater cities do not exist. While underwater ruins exist, they are ancient human settlements, not secret cities."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Renewable energy grows globally.",
+      "Invisible power source found.",
+      "Solar capacity increases.",
+      "Clean energy expands."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Invisible power sources that can replace all energy do not exist. All energy sources have visible components and limitations."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "New smartphone features.",
+      "Phone can read minds.",
+      "Technology improves.",
+      "User experience enhances."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Smartphones cannot read minds. While they can monitor brain activity with special equipment, they cannot access thoughts or memories."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Exercise benefits health.",
+      "Superhuman strength training.",
+      "Physical fitness.",
+      "Health improvement."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Training that grants superhuman strength does not exist. While exercise can improve strength, it cannot give supernatural abilities."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Medical care advances.",
+      "Secret healing techniques.",
+      "Patient treatment.",
+      "Healthcare improvement."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Secret healing techniques that can cure all diseases do not exist. Medical treatment requires proven scientific methods and research."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Clean energy development.",
+      "Magic power sources.",
+      "Renewable growth.",
+      "Emission reduction."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Magic power sources do not exist. All energy sources follow physical laws and have practical limitations and costs."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Wildlife conservation.",
+      "Hidden animal species.",
+      "Species protection.",
+      "Biodiversity preservation."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Hidden animal species that are completely unknown to science do not exist. While new species are discovered, they are not hidden from researchers."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Medical research progress.",
+      "Secret cure locations.",
+      "Treatment advancement.",
+      "Patient care."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Secret cure locations do not exist. Medical breakthroughs come from scientific research, not hidden or secret locations."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Electric vehicle adoption.",
+      "Anti-gravity transportation.",
+      "Clean transport.",
+      "Battery improvement."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Anti-gravity transportation does not exist and cannot exist with current technology. It violates fundamental laws of physics."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Cancer treatment research.",
+      "Magic cure discovery.",
+      "Medical advancement.",
+      "Patient outcomes."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Magic cures that can instantly cure all diseases do not exist. Medical treatment requires scientific research and proven methods."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Climate change impact.",
+      "Secret weather control.",
+      "Environmental effects.",
+      "Global warming."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Secret weather control systems that can manipulate global climate do not exist. Weather modification is limited to local effects."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Renewable energy jobs.",
+      "Invisible energy workers.",
+      "Clean energy employment.",
+      "Green job growth."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Invisible energy workers do not exist. All energy production and distribution requires visible, real workers and infrastructure."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Smartphone innovation.",
+      "Future prediction apps.",
+      "Technology advancement.",
+      "Device improvement."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Apps that can predict the future do not exist. While apps can analyze data and trends, they cannot foresee future events."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Exercise health benefits.",
+      "Immortality training.",
+      "Physical fitness.",
+      "Health improvement."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Training that grants immortality does not exist. While exercise improves health and longevity, it cannot prevent death or aging."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Medical care quality.",
+      "Secret society medicine.",
+      "Healthcare improvement.",
+      "Patient treatment."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Secret societies do not control all medicine. Healthcare is provided by many organizations and professionals globally."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Clean energy expansion.",
+      "Free energy devices.",
+      "Renewable growth.",
+      "Emission reduction."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Free energy devices that violate the laws of thermodynamics do not exist. All energy production has costs and limitations."
+  },
+  {
+    "question": "Which headline is fake?",
+    "options": [
+      "Wildlife protection.",
+      "Mythical animal discovery.",
+      "Species conservation.",
+      "Biodiversity preservation."
+    ],
+    "fakeIndex": 1,
+    "explanation": "This is fake. Mythical animals do not exist in reality. They are fictional creatures from stories and folklore."
+  }
+]
