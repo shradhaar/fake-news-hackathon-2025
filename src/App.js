@@ -16,15 +16,37 @@ function App() {
   const [questionCount, setQuestionCount] = useState(0);
   const [showTips, setShowTips] = useState(true);
   const [usedQuestions, setUsedQuestions] = useState(new Set());
+  const [currentRound, setCurrentRound] = useState(1);
+  const [roundScores, setRoundScores] = useState({ round1: { p1: 0, p2: 0 }, round2: { p1: 0, p2: 0 }, round3: { p1: 0, p2: 0 } });
+  const [questionType, setQuestionType] = useState("headline"); // "headline", "evidence", "misinformation"
   
   const timerRef = useRef(null);
 
-  // Get current question with smart rotation to avoid immediate repetition
-  const question = questions[current % questions.length];
+  // Get questions for current round and type
+  const getQuestionsForRound = (round) => {
+    return questions.filter(q => q.round === round);
+  };
+
+  const getQuestionsForType = (type) => {
+    return questions.filter(q => q.type === type);
+  };
+
+  // Get current question based on game mode
+  const getCurrentQuestion = () => {
+    if (gameMode === "team") {
+      const roundQuestions = getQuestionsForRound(currentRound);
+      return roundQuestions[questionCount % roundQuestions.length];
+    } else {
+      const typeQuestions = getQuestionsForType(questionType);
+      return typeQuestions[questionCount % typeQuestions.length];
+    }
+  };
+
+  const question = getCurrentQuestion();
 
   // Countdown timer effect
   useEffect(() => {
-    if (gameStarted && !finished && !showExplanation) {
+    if (gameStarted && !finished && !showExplanation && question) {
       timerRef.current = setInterval(() => {
         setTimeLeft((prev) => {
           if (prev <= 1) {
@@ -42,13 +64,14 @@ function App() {
         clearInterval(timerRef.current);
       }
     };
-  }, [current, gameStarted, finished, showExplanation]);
+  }, [current, gameStarted, finished, showExplanation, question]);
 
   function handleTimeUp() {
     // Auto-select wrong answer when time runs out
-    const wrongAnswer = (current % questions.length) < questions.length ? 
-      (questions[current % questions.length].fakeIndex === 0 ? 1 : 0) : 0;
-    handleAnswer(wrongAnswer);
+    if (question) {
+      const wrongAnswer = question.fakeIndex === 0 ? 1 : 0;
+      handleAnswer(wrongAnswer);
+    }
   }
 
   function handleAnswer(index) {
@@ -61,8 +84,22 @@ function App() {
       } else {
         if (currentPlayer === 1) {
           setPlayer1Score(player1Score + 10);
+          setRoundScores(prev => ({
+            ...prev,
+            [`round${currentRound}`]: {
+              ...prev[`round${currentRound}`],
+              p1: prev[`round${currentRound}`].p1 + 10
+            }
+          }));
         } else {
           setPlayer2Score(player2Score + 10);
+          setRoundScores(prev => ({
+            ...prev,
+            [`round${currentRound}`]: {
+              ...prev[`round${currentRound}`],
+              p2: prev[`round${currentRound}`].p2 + 10
+            }
+          }));
         }
       }
     }
@@ -74,29 +111,21 @@ function App() {
   }
 
   function getNextQuestionIndex() {
-    // Smart rotation: try to use questions that haven't been used recently
-    const totalQuestions = questions.length;
-    let nextIndex = current + 1;
-    
-    // If we've used most questions, reset the used questions set
-    if (usedQuestions.size >= totalQuestions * 0.8) {
-      setUsedQuestions(new Set());
+    if (gameMode === "team") {
+      const roundQuestions = getQuestionsForRound(currentRound);
+      return (questionCount + 1) % roundQuestions.length;
+    } else {
+      const typeQuestions = getQuestionsForType(questionType);
+      return (questionCount + 1) % typeQuestions.length;
     }
-    
-    // Try to find a question that hasn't been used recently
-    let attempts = 0;
-    while (attempts < totalQuestions) {
-      const candidateIndex = nextIndex % totalQuestions;
-      if (!usedQuestions.has(candidateIndex)) {
-        setUsedQuestions(prev => new Set([...prev, candidateIndex]));
-        return candidateIndex;
-      }
-      nextIndex++;
-      attempts++;
-    }
-    
-    // If all questions have been used, just move to next
-    return nextIndex % totalQuestions;
+  }
+
+  function getNextQuestionType() {
+    // Alternate between the three types of questions for individual mode
+    const types = ["headline", "evidence", "misinformation"];
+    const currentIndex = types.indexOf(questionType);
+    const nextIndex = (currentIndex + 1) % types.length;
+    return types[nextIndex];
   }
 
   function nextQuestion() {
@@ -105,19 +134,25 @@ function App() {
     setTimeLeft(10);
     
     if (gameMode === "single") {
-      // Infinite mode - always continue with smart rotation
-      const nextIndex = getNextQuestionIndex();
-      setCurrent(nextIndex);
+      // Individual mode - alternate between question types
       setQuestionCount(questionCount + 1);
+      setQuestionType(getNextQuestionType());
     } else {
-      // Team mode - check if 10 questions completed
+      // Team mode - check if 10 questions completed for current round
       if (questionCount + 1 < 10) {
-        const nextIndex = getNextQuestionIndex();
-        setCurrent(nextIndex);
         setQuestionCount(questionCount + 1);
         setCurrentPlayer(currentPlayer === 1 ? 2 : 1);
       } else {
-        setFinished(true);
+        // Round completed, check if all 3 rounds are done
+        if (currentRound < 3) {
+          // Move to next round
+          setCurrentRound(currentRound + 1);
+          setQuestionCount(0);
+          setCurrentPlayer(1);
+        } else {
+          // All rounds completed
+          setFinished(true);
+        }
       }
     }
   }
@@ -134,7 +169,10 @@ function App() {
     setCurrentPlayer(1);
     setGameStarted(false);
     setQuestionCount(0);
-    setUsedQuestions(new Set([0])); // Mark first question as used
+    setUsedQuestions(new Set([0]));
+    setCurrentRound(1);
+    setRoundScores({ round1: { p1: 0, p2: 0 }, round2: { p1: 0, p2: 0 }, round3: { p1: 0, p2: 0 } });
+    setQuestionType("headline");
   }
 
   function returnToHome() {
@@ -215,11 +253,11 @@ function App() {
             <div className="grid md:grid-cols-2 gap-4 text-sm">
               <div>
                 <p className="font-semibold text-blue-700">Single Player Mode:</p>
-                <p className="text-blue-600">Infinite questions - practice and improve your skills!</p>
+                <p className="text-blue-600">Three types of questions alternating - practice and improve your skills!</p>
               </div>
               <div>
                 <p className="font-semibold text-blue-700">Team Mode:</p>
-                <p className="text-blue-600">10 questions - two players take turns</p>
+                <p className="text-blue-600">3 rounds of 10 questions each - compete with a friend!</p>
               </div>
             </div>
           </div>
@@ -260,7 +298,7 @@ function App() {
               onClick={() => setGameMode("single")}
             >
               <div className="text-lg font-medium">Single Player</div>
-              <div className="text-sm text-gray-600">Infinite questions - play as long as you want!</div>
+              <div className="text-sm text-gray-600">Three types of questions alternating - practice and improve!</div>
             </button>
             
             <button
@@ -272,7 +310,7 @@ function App() {
               onClick={() => setGameMode("team")}
             >
               <div className="text-lg font-medium">Team Mode</div>
-              <div className="text-sm text-gray-600">10 questions - two players take turns</div>
+              <div className="text-sm text-gray-600">3 rounds of 10 questions each - compete with a friend!</div>
             </button>
           </div>
           
@@ -302,7 +340,7 @@ function App() {
     
     return (
       <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-green-50 to-emerald-100">
-        <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full text-center">
+        <div className="bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full text-center">
           <h1 className="text-4xl font-bold mb-4 text-green-700">Game Over 🎉</h1>
           
           {gameMode === "single" ? (
@@ -312,21 +350,52 @@ function App() {
             </div>
           ) : (
             <div className="mb-6">
-              <p className="text-xl mb-2">Final Scores (10 questions):</p>
-              <div className="flex justify-center space-x-8">
-                <div className="text-lg">
-                  <span className="font-semibold">Player 1:</span> {player1Score}
+              <h2 className="text-xl font-semibold mb-4">Final Results (3 Rounds)</h2>
+              
+              {/* Round-by-round breakdown */}
+              <div className="space-y-4 mb-6">
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-gray-800 mb-2">Round 1</h3>
+                  <div className="flex justify-center space-x-8 text-sm">
+                    <span>Player 1: {roundScores.round1.p1}</span>
+                    <span>Player 2: {roundScores.round1.p2}</span>
+                  </div>
                 </div>
-                <div className="text-lg">
-                  <span className="font-semibold">Player 2:</span> {player2Score}
+                
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-gray-800 mb-2">Round 2</h3>
+                  <div className="flex justify-center space-x-8 text-sm">
+                    <span>Player 1: {roundScores.round2.p1}</span>
+                    <span>Player 2: {roundScores.round2.p2}</span>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-gray-800 mb-2">Round 3</h3>
+                  <div className="flex justify-center space-x-8 text-sm">
+                    <span>Player 1: {roundScores.round3.p1}</span>
+                    <span>Player 2: {roundScores.round3.p2}</span>
+                  </div>
                 </div>
               </div>
-              {winner && winner !== "Tie" && (
-                <p className="text-xl font-bold text-green-600 mt-2">🏆 {winner} Wins!</p>
-              )}
-              {winner === "Tie" && (
-                <p className="text-xl font-bold text-yellow-600 mt-2">🤝 It's a Tie!</p>
-              )}
+              
+              <div className="mb-4">
+                <p className="text-xl mb-2">Total Scores:</p>
+                <div className="flex justify-center space-x-8">
+                  <div className="text-lg">
+                    <span className="font-semibold">Player 1:</span> {player1Score}
+                  </div>
+                  <div className="text-lg">
+                    <span className="font-semibold">Player 2:</span> {player2Score}
+                  </div>
+                </div>
+                {winner && winner !== "Tie" && (
+                  <p className="text-xl font-bold text-green-600 mt-2">🏆 {winner} Wins!</p>
+                )}
+                {winner === "Tie" && (
+                  <p className="text-xl font-bold text-yellow-600 mt-2">🤝 It's a Tie!</p>
+                )}
+              </div>
             </div>
           )}
           
@@ -386,7 +455,7 @@ function App() {
               className="px-6 py-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-700 transition-colors"
               onClick={nextQuestion}
             >
-              {gameMode === "single" ? "Next Question" : (questionCount + 1 < 10 ? "Next Question" : "Finish Game")}
+              {gameMode === "single" ? "Next Question" : (questionCount + 1 < 10 ? "Next Question" : "Next Round")}
             </button>
             <button
               className="px-6 py-3 bg-gray-600 text-white rounded-lg font-semibold hover:bg-gray-700 transition-colors"
@@ -395,6 +464,18 @@ function App() {
               Return to Home
             </button>
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  // If no question is available, show loading or error
+  if (!question) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen p-4 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-indigo-800 mb-4">Loading...</h1>
+          <p className="text-gray-600">Preparing your questions...</p>
         </div>
       </div>
     );
@@ -421,9 +502,9 @@ function App() {
               )}
               <div className="text-sm text-gray-600">
                 {gameMode === "single" ? (
-                  `Question ${questionCount + 1} (Infinite Mode)`
+                  `Question ${questionCount + 1} (${questionType.charAt(0).toUpperCase() + questionType.slice(1)} Type)`
                 ) : (
-                  `Question ${questionCount + 1} of 10`
+                  `Round ${currentRound} - Question ${questionCount + 1} of 10`
                 )}
               </div>
             </div>
@@ -451,18 +532,39 @@ function App() {
             Score: {score}
           </div>
         ) : (
-          <div className="flex justify-center space-x-12">
-            <div className={`text-center p-3 rounded-lg ${
-              currentPlayer === 1 ? "bg-indigo-100 border-2 border-indigo-300" : "bg-gray-100"
-            }`}>
-              <div className="text-sm text-gray-600">Player 1</div>
-              <div className="text-xl font-bold text-indigo-700">{player1Score}</div>
+          <div className="space-y-4">
+            {/* Current round scores */}
+            <div className="text-center">
+              <h3 className="text-lg font-semibold text-indigo-700 mb-2">Round {currentRound} Scores</h3>
+              <div className="flex justify-center space-x-12">
+                <div className={`text-center p-3 rounded-lg ${
+                  currentPlayer === 1 ? "bg-indigo-100 border-2 border-indigo-300" : "bg-gray-100"
+                }`}>
+                  <div className="text-sm text-gray-600">Player 1</div>
+                  <div className="text-xl font-bold text-indigo-700">{roundScores[`round${currentRound}`].p1}</div>
+                </div>
+                <div className={`text-center p-3 rounded-lg ${
+                  currentPlayer === 2 ? "bg-indigo-100 border-2 border-indigo-300" : "bg-gray-100"
+                }`}>
+                  <div className="text-sm text-gray-600">Player 2</div>
+                  <div className="text-xl font-bold text-indigo-700">{roundScores[`round${currentRound}`].p2}</div>
+                </div>
+              </div>
             </div>
-            <div className={`text-center p-3 rounded-lg ${
-              currentPlayer === 2 ? "bg-indigo-100 border-2 border-indigo-300" : "bg-gray-100"
-            }`}>
-              <div className="text-sm text-gray-600">Player 2</div>
-              <div className="text-xl font-bold text-indigo-700">{player2Score}</div>
+            
+            {/* Total scores */}
+            <div className="text-center">
+              <h3 className="text-lg font-semibold text-gray-700 mb-2">Total Scores</h3>
+              <div className="flex justify-center space-x-12">
+                <div className="text-center p-3 rounded-lg bg-gray-100">
+                  <div className="text-sm text-gray-600">Player 1</div>
+                  <div className="text-xl font-bold text-gray-700">{player1Score}</div>
+                </div>
+                <div className="text-center p-3 rounded-lg bg-gray-100">
+                  <div className="text-sm text-gray-600">Player 2</div>
+                  <div className="text-xl font-bold text-gray-700">{player2Score}</div>
+                </div>
+              </div>
             </div>
           </div>
         )}

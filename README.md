@@ -16,17 +16,24 @@ A hackathon prototype game where players guess which headline is fake.
   - Your selected answer
   - The correct answer
   - Detailed explanation of why the fake headline is fake
-- **Team Mode**: Two-player turn-based gameplay with:
-  - Separate score tracking for each player
+- **Team Mode**: Three-round competition with:
+  - **Round 1**: Pick which headline is false (10 questions)
+  - **Round 2**: Click for evidence - fact-check blurbs, sources, truth verification (10 questions)
+  - **Round 3**: Analyze "Why is this misinformation?" with options like "No credible source," "Misleading statistic," "Clickbait wording" (10 questions)
+  - Separate score tracking for each player and round
   - Player turn indicators
-  - Final winner determination
+  - Final winner determination with round-by-round breakdown
   - Tie game handling
+- **Single Player Mode**: Alternating question types:
+  - **Headline Type**: Identify fake headlines
+  - **Evidence Type**: Evaluate source reliability and fact-checking
+  - **Misinformation Type**: Analyze why content is misleading
 - **Tips Page**: Comprehensive guide that appears before gameplay including:
   - Step-by-step game rules
   - Pro tips for detecting fake news
   - Game mode explanations
   - Strategy advice
-- **Smart Question System**: 50+ diverse questions with intelligent rotation:
+- **Smart Question System**: 30+ diverse questions organized by rounds and types:
   - No immediate repetition of questions
   - Covers multiple categories (science, health, technology, politics, etc.)
   - Reliable fake news examples from real conspiracy theories
@@ -34,35 +41,48 @@ A hackathon prototype game where players guess which headline is fake.
 
 ## Game Modes
 
-1. **Single Player**: Play alone and beat your high score
-   - Infinite questions for endless practice
-   - Smart question rotation prevents repetition
-   - Perfect for improving your fake news detection skills
-2. **Team Mode**: Two players take turns
-   - Exactly 10 questions for fair competition
+1. **Single Player**: Practice and improve your skills
+   - Alternates between three question types
+   - Headline identification → Evidence evaluation → Misinformation analysis
+   - Perfect for developing comprehensive fake news detection skills
+2. **Team Mode**: Three-round competitive gameplay
+   - **Round 1**: Headline identification (10 questions)
+   - **Round 2**: Evidence and source evaluation (10 questions)
+   - **Round 3**: Misinformation analysis (10 questions)
    - Turn-based gameplay with score comparison
-   - Smart question rotation ensures variety
+   - Round-by-round scoring and final winner determination
 
-## Question Categories
+## Question Types
 
-The game includes 50+ diverse questions covering:
-- **Science & Technology**: AI, space exploration, medical breakthroughs
-- **Health & Medicine**: Vaccines, treatments, medical research
-- **Conspiracy Theories**: Debunked myths and pseudoscience
-- **Environmental Issues**: Climate change, conservation, renewable energy
-- **Historical Myths**: Ancient civilizations, archaeological hoaxes
-- **Supernatural Claims**: Mythical creatures, paranormal phenomena
-- **Government & Politics**: Secret societies, hidden agendas
-- **Technology Myths**: Future predictions, impossible inventions
+### **Round 1: Headline Identification**
+- "Pick which headline is false"
+- Players identify fake news headlines from multiple options
+- Covers various topics: science, health, technology, politics
+
+### **Round 2: Evidence Evaluation**
+- "Click for evidence - fact-check blurbs, where the story came from, or what the truth is"
+- Players evaluate source reliability and fact-checking
+- Teaches critical evaluation of information sources
+
+### **Round 3: Misinformation Analysis**
+- "Why is this misinformation?" with options like:
+  - "No credible source"
+  - "Misleading statistic"
+  - "Clickbait wording"
+  - "All of the above"
+- Players analyze why content is misleading
+- Develops deeper understanding of misinformation tactics
 
 ## How to Play
 
 1. **Read the Tips**: Start with the comprehensive tips page to learn the rules
 2. **Choose Game Mode**: Select between Single Player or Team Mode
-3. **Read Questions Carefully**: One headline in each question is fake
+3. **Round Structure**: 
+   - **Team Mode**: Complete 3 rounds of 10 questions each
+   - **Single Player**: Experience all three question types in rotation
 4. **Answer Within 10 Seconds**: Use the countdown timer to make your choice
 5. **Review Explanations**: Learn why each fake headline is fake
-6. **Track Your Progress**: Monitor your score and question count
+6. **Track Progress**: Monitor scores by round and overall performance
 7. **Return to Home**: Use the home button to change modes or restart
 
 ## Tips for Success
@@ -73,11 +93,14 @@ The game includes 50+ diverse questions covering:
 - **Trust your instincts** - if it feels off, it probably is!
 - **Use the 10-second timer wisely** - don't rush but don't overthink
 - **Learn from explanations** - each fake headline teaches you something new
+- **Evaluate sources critically** - consider credibility and evidence
+- **Recognize common misinformation patterns** - understand why content is misleading
 
-## Smart Question Rotation
+## Smart Question System
 
 The game features intelligent question distribution:
-- **No Immediate Repetition**: Questions won't repeat until most others have been used
+- **Round-Based Organization**: Questions are organized by difficulty and type
+- **Type Rotation**: Single player mode alternates between all three question types
 - **Balanced Distribution**: Ensures all question categories are represented
 - **Learning Progression**: Players encounter diverse examples to improve skills
 - **Fresh Experience**: Each playthrough feels different and engaging
@@ -99,4 +122,4 @@ npm start
 - Modern JavaScript (ES6+)
 - Responsive design for all devices
 - State management with React hooks
-- Smart algorithms for question rotation
+- Smart algorithms for question rotation and round management
