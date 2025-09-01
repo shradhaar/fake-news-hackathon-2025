@@ -11,26 +11,31 @@ const Logo = ({ size = 'medium', className = '' }) => {
     <div className={`${sizeClasses[size]} ${className} flex flex-col items-center`}>
       {/* Walking Red Cube Character */}
       <div className="relative w-16 h-16 mb-2">
-        {/* Main cube body */}
+        {/* Main cube body - 3D appearance with shading */}
         <div className="absolute w-12 h-12 bg-red-500 border-2 border-red-700 rounded-sm transform rotate-45 top-1 left-2">
+          {/* 3D shading - right face */}
+          <div className="absolute top-0 right-0 w-3 h-12 bg-red-600 transform skew-y-12 origin-left"></div>
+          {/* 3D shading - bottom face */}
+          <div className="absolute bottom-0 left-0 w-12 h-3 bg-red-600 transform skew-x-12 origin-top"></div>
+          
           {/* Face */}
-          <div className="absolute top-1 left-1 w-2 h-2 bg-black rounded-sm"></div>
-          <div className="absolute top-1 right-1 w-2 h-2 bg-black rounded-sm"></div>
-          <div className="absolute bottom-1 left-2 w-4 h-1 bg-black rounded-sm"></div>
+          <div className="absolute top-2 left-2 w-2 h-2 bg-white border border-gray-300 rounded-sm"></div>
+          <div className="absolute top-2 right-2 w-2 h-2 bg-white border border-gray-300 rounded-sm"></div>
+          <div className="absolute bottom-2 left-3 w-4 h-1 bg-black rounded-sm"></div>
         </div>
         
-        {/* Arms */}
-        <div className="absolute top-3 -left-2 w-1 h-3 bg-black transform rotate-12"></div>
+        {/* Arms - positioned more naturally */}
+        <div className="absolute top-4 -left-3 w-1 h-4 bg-black transform rotate-12"></div>
         <div className="absolute top-3 -right-2 w-1 h-3 bg-black transform -rotate-12"></div>
         
-        {/* Legs */}
-        <div className="absolute bottom-1 left-1 w-1 h-3 bg-black transform rotate-12"></div>
+        {/* Legs - walking pose */}
+        <div className="absolute bottom-1 left-1 w-1 h-4 bg-black transform rotate-12"></div>
         <div className="absolute bottom-1 right-1 w-1 h-3 bg-black transform -rotate-12"></div>
         
-        {/* Laptop */}
-        <div className="absolute top-2 left-6 w-6 h-4 bg-black border border-gray-800 rounded-sm">
-          <div className="w-full h-1 bg-green-400 text-xs text-green-800 font-mono flex items-center justify-center">
-            &lt;/_
+        {/* Laptop/Tablet - held in right hand */}
+        <div className="absolute top-2 left-8 w-6 h-4 bg-black border border-gray-800 rounded-sm">
+          <div className="w-full h-2 bg-green-400 text-xs text-green-800 font-mono flex items-center justify-center">
+            &lt;/&gt;
           </div>
         </div>
       </div>
