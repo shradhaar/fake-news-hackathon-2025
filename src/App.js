@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import questions from "./questions.json";
+import Logo from './Logo';
 
 function App() {
   const [current, setCurrent] = useState(0);
@@ -190,10 +191,15 @@ function App() {
 
   if (showTips) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gradient-to-br from-purple-50 to-pink-100">
-        <div className="bg-white p-8 rounded-lg shadow-lg max-w-4xl w-full">
-          <h1 className="text-4xl font-bold mb-8 text-center text-purple-800">🎯 How to Play Spot the Fake News</h1>
-          
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-4">
+              <Logo size="large" />
+            </div>
+            <h1 className="text-4xl font-bold text-gray-800 mb-4">Clickbait Busters</h1>
+            <p className="text-xl text-gray-600">Master the art of spotting fake news and misinformation!</p>
+          </div>
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div className="space-y-4">
               <h2 className="text-2xl font-semibold text-purple-700 mb-4">📖 Game Rules</h2>
@@ -282,12 +288,15 @@ function App() {
 
   if (!gameStarted) {
     return (
-      <div className="flex flex-col items-center justify-center h-screen p-4 bg-gradient-to-br from-blue-50 to-indigo-100">
-        <h1 className="text-4xl font-bold mb-8 text-indigo-800">Spot the Fake News 📰</h1>
-        
-        <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-          <h2 className="text-2xl font-semibold mb-6 text-center">Choose Game Mode</h2>
-          
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-4">
+              <Logo size="large" />
+            </div>
+            <h1 className="text-4xl font-bold text-gray-800 mb-4">Clickbait Busters</h1>
+            <p className="text-xl text-gray-600">Choose your game mode and start busting clickbait!</p>
+          </div>
           <div className="space-y-4">
             <button
               className={`w-full p-4 rounded-lg border-2 transition-all ${
@@ -486,7 +495,10 @@ function App() {
       {/* Header with game info and Return to Home button */}
       <div className="w-full max-w-4xl mb-6">
         <div className="flex justify-between items-center mb-4">
-          <h1 className="text-3xl font-bold text-indigo-800">Spot the Fake News 📰</h1>
+          <div className="flex items-center space-x-3">
+            <Logo size="small" />
+            <h1 className="text-3xl font-bold text-indigo-800">Clickbait Busters</h1>
+          </div>
           <div className="flex items-center space-x-4">
             <button
               onClick={returnToHome}
